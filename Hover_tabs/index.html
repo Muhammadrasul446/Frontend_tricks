@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		.container {
+			display: flex;
+			align-items: flex-start;
+		}
+		.content__heading {
+			opacity: 0;
+			position: absolute;
+			z-index: 0;
+		}
+		.links {
+			margin: 1rem 2rem 0 2rem;
+		}
+		a{
+			text-decoration: none;
+			color: #000;
+			padding: .5rem 0;
+		}
+		.active {
+			opacity: 1;
+			z-index: 9999;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="links">
+			<div><a class="link" id="0" href="#">Title 1 here</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></div>
+			<div><a class="link" id="1" href="#">Title 2 here</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></div>
+			<div><a class="link" id="2" href="#">Title 3 here</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></div>
+			<div><a class="link" id="3" href="#">Title 4 here</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></div>
+			<div><a class="link" id="4" href="#">Title 5 here</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></div>
+		</div>
+		<div class="content">
+			<div class="content__heading">
+				<h1>Heading 1 here</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti nam, optio voluptatem consectetur voluptas quis illum iste, magni. Quia, ex impedit quas enim laborum ipsa quod perferendis iste inventore, excepturi doloremque harum. Reiciendis, adipisci consequuntur sit mollitia neque quas accusantium saepe ad commodi repellendus quidem ut eum inventore molestias ipsum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa suscipit possimus dolorem, distinctio minima unde eligendi magnam quas atque. Delectus magnam, asperiores molestias atque impedit veniam soluta perferendis maxime deserunt, quibusdam sequi totam? Obcaecati itaque perspiciatis debitis eaque error, optio!</p>
+			</div>
+			<div class="content__heading">
+				<h1>Heading 2 here</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur quaerat perferendis velit magni neque, cupiditate a, minima dicta, pariatur, eveniet mollitia? Dignissimos inventore iste suscipit at, autem animi, praesentium perspiciatis quis. Delectus nostrum dolore, debitis minima reiciendis. In, modi. Doloribus itaque eius illum atque, possimus laboriosam ea inventore quam optio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit cumque adipisci, blanditiis tempora sequi quasi ipsa maxime aperiam alias qui facere molestias ex laborum! Consequatur, exercitationem, blanditiis? Unde consequuntur tenetur similique maiores obcaecati modi deleniti harum quisquam, dignissimos suscipit non.</p>
+			</div>
+			<div class="content__heading">
+				<h1>Heading 3 here</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur recusandae aut veniam obcaecati quia quod laborum natus aspernatur atque repellendus porro ratione beatae qui dignissimos, reprehenderit nemo magnam vero ea eos laboriosam ad soluta nobis. At saepe officiis, cupiditate assumenda ea eaque, placeat consectetur tempore eligendi, itaque laboriosam sed illo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas vitae, aperiam magni reiciendis eum suscipit accusantium provident quod fugit, minus modi numquam ex expedita odit unde mollitia dolorum veniam recusandae dolore itaque praesentium quis quas at! Nobis aut, possimus necessitatibus!</p>
+			</div>
+			<div class="content__heading">
+				<h1>Heading 4 here</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore, aspernatur deserunt magnam excepturi eaque, culpa accusantium harum quam? Vitae molestiae cumque dolorum iusto at aperiam tempora reprehenderit nesciunt repellendus, amet ullam incidunt nemo praesentium consequatur blanditiis. Explicabo modi reprehenderit, et fugiat voluptatibus ab eveniet, eaque possimus porro a saepe. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consectetur et ipsa, quibusdam tempora, a officiis nesciunt illum quo, quasi necessitatibus. Numquam omnis nostrum eius nesciunt non magni quidem dolore, dolor facere eveniet, ex cum hic quod culpa. Asperiores, deleniti.</p>
+			</div>
+			<div class="content__heading">
+				<h1>Heading 5 here</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum excepturi, ratione. Provident ratione vel, impedit dignissimos eveniet. Beatae, accusantium debitis nisi non. Adipisci aperiam porro amet, tenetur deserunt aliquid vitae reprehenderit nihil! Aperiam debitis, vel minus adipisci, labore pariatur sapiente similique illum alias, dicta, itaque esse totam magni ipsum fugiat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto animi quo sapiente aliquid nostrum labore, in placeat ducimus eos error veniam, rerum sit veritatis voluptatum, dolore repellendus ut reprehenderit tempora voluptatibus numquam! Pariatur velit ducimus esse eum, sit reiciendis ipsam.</p>
+			</div>
+		</div>
+	</div>
+		<script>
+			let links = document.querySelectorAll('.link');
+			let content = document.querySelectorAll('.content__heading');
+
+			const toggleShow = (event) => {
+				let id = event.target.id;
+				for (var i = 0; i < content.length; i++) {
+					if (i != id) {
+						content[i].classList.remove('active');
+					} else {
+						content[i].classList.add('active');
+					}
+				}
+			}
+
+			for (var i = 0; i < links.length; i++) {
+				links[i].addEventListener('mouseenter', toggleShow);
+			}
+		</script>
+</body>
+</html>
